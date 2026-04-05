@@ -14,12 +14,14 @@ const navLinks = [
 ];
 
 const modules = [
-  { num: "01", title: "Основы осознанности", desc: "Введение в практики внимания и присутствия. Медитации, дыхательные техники, ведение дневника.", icon: "Leaf" },
-  { num: "02", title: "Тело и движение", desc: "Телесно-ориентированные практики, йога, соматика. Учимся слышать сигналы тела.", icon: "Activity" },
-  { num: "03", title: "Эмоциональный интеллект", desc: "Работа с чувствами, развитие эмпатии, навыки регуляции эмоционального состояния.", icon: "Heart" },
-  { num: "04", title: "Ценности и смыслы", desc: "Поиск жизненных опор, выстраивание личных приоритетов, работа с картой ценностей.", icon: "Compass" },
-  { num: "05", title: "Коммуникация", desc: "Ненасильственное общение, умение слушать, навыки конструктивного диалога.", icon: "MessageCircle" },
-  { num: "06", title: "Интеграция и рост", desc: "Закрепление изменений, создание личного плана развития, поддерживающее сообщество.", icon: "Sprout" },
+  { num: "01", title: "Философские основания", desc: "История гештальт-подхода, его философские корни. Феноменология, экзистенциализм, теория поля как основа мышления гештальт-терапевта.", icon: "BookOpen" },
+  { num: "02", title: "Диалогичность", desc: "Принципы диалогических отношений по Буберу. Встреча «Я — Ты» как основа терапевтического контакта и живого присутствия.", icon: "Users" },
+  { num: "03", title: "Телесное осознавание", desc: "Тело как источник информации о переживании. Работа с телесными ощущениями, напряжениями и импульсами в гештальт-практике.", icon: "Activity" },
+  { num: "04", title: "Этические принципы", desc: "Этика в терапевтических отношениях. Границы, ответственность, профессиональная позиция гештальт-терапевта.", icon: "Shield" },
+  { num: "05", title: "Теория self", desc: "Концепция self в гештальт-подходе: id, ego, personality. Функции self и их проявление в контакте с окружающей средой.", icon: "Compass" },
+  { num: "06", title: "Цикл контакта", desc: "Стадии контакта и прерывания: слияние, интроекция, проекция, ретрофлексия, дефлексия, эготизм. Работа с фигурой и фоном.", icon: "RefreshCw" },
+  { num: "07", title: "Теория поля", desc: "Поле как контекст опыта. Принципы полевого мышления, организм-среда как единое целое, феноменологический метод исследования.", icon: "Layers" },
+  { num: "08", title: "Теория развития", desc: "Развитие личности в гештальт-подходе. Ранний опыт, формирование паттернов контакта, ресурсы и дефициты в истории человека.", icon: "Sprout" },
 ];
 
 const teachers = [
@@ -30,18 +32,22 @@ const teachers = [
 ];
 
 const schedule = [
-  { month: "Май 2025", phase: "Старт потока", items: ["Установочная встреча", "Модуль 1: Осознанность", "Практики онлайн"] },
-  { month: "Июнь 2025", phase: "Погружение", items: ["Модуль 2: Тело", "Модуль 3: Эмоции", "Групповые сессии"] },
-  { month: "Июль 2025", phase: "Трансформация", items: ["Модуль 4: Ценности", "Модуль 5: Коммуникация", "Интеграционный ретрит"] },
-  { month: "Август 2025", phase: "Завершение", items: ["Модуль 6: Рост", "Итоговые проекты", "Выпускная встреча"] },
+  { month: "Сессия 1", phase: "Философские основания", items: ["История гештальт-подхода", "Феноменологический метод", "Трёхдневный интенсив"] },
+  { month: "Сессия 2", phase: "Диалогичность", items: ["Встреча «Я — Ты»", "Присутствие в контакте", "Трёхдневный интенсив"] },
+  { month: "Сессия 3", phase: "Телесное осознавание", items: ["Тело как источник опыта", "Работа с ощущениями", "Трёхдневный интенсив"] },
+  { month: "Сессия 4", phase: "Этические принципы", items: ["Этика в терапии", "Границы и ответственность", "Трёхдневный интенсив"] },
+  { month: "Сессия 5", phase: "Теория self", items: ["Id, ego, personality", "Функции self", "Трёхдневный интенсив"] },
+  { month: "Сессия 6", phase: "Цикл контакта", items: ["Стадии контакта", "Прерывания контакта", "Трёхдневный интенсив"] },
+  { month: "Сессия 7", phase: "Теория поля", items: ["Полевое мышление", "Организм и среда", "Трёхдневный интенсив"] },
+  { month: "Сессия 8", phase: "Теория развития", items: ["Ранний опыт", "Паттерны контакта", "Завершение ступени"] },
 ];
 
 const faqs = [
-  { q: "Кому подходит программа «Росток»?", a: "Программа подходит всем, кто хочет глубже понять себя, найти баланс и наполниться ресурсом. Специальной подготовки не требуется — только желание меняться." },
-  { q: "Сколько времени нужно уделять в неделю?", a: "Примерно 3–4 часа в неделю: живые встречи, самостоятельные практики и работа с материалами в личном кабинете." },
-  { q: "Есть ли доступ к записям занятий?", a: "Да, все записи сохраняются в личном кабинете и доступны в течение 6 месяцев после окончания программы." },
-  { q: "Как проходят занятия — онлайн или офлайн?", a: "Основной формат — онлайн. Один интеграционный ретрит проходит очно в живописном месте за городом." },
-  { q: "Есть ли поддержка между занятиями?", a: "Да! Для каждого потока создаётся закрытое сообщество, где куратор отвечает на вопросы и делится дополнительными материалами." },
+  { q: "Кому предназначена Первая ступень?", a: "Программа для тех, кто хочет стать гештальт-терапевтом, а также для психологов, коучей и всех, кто стремится глубже понять себя и природу человеческих отношений через гештальт-подход." },
+  { q: "Как устроены трёхдневные встречи?", a: "Каждая сессия длится три дня и проходит примерно раз в 1,5 месяца. Группа работает в формате живых встреч: теория, практика, групповой процесс — всё переплетается в единое полотно." },
+  { q: "Что такое 180 часов программы?", a: "Это суммарный объём всех восьми трёхдневных сессий. Он соответствует стандартам подготовки гештальт-терапевтов и засчитывается при продолжении обучения на следующих ступенях МГИ." },
+  { q: "Нужна ли психологическая подготовка для поступления?", a: "Нет, специального образования не требуется. Важно личное намерение и готовность к глубокой работе с собой в группе." },
+  { q: "Что происходит после завершения Первой ступени?", a: "Выпускники могут продолжить обучение на Второй ступени МГИ — работа с клиентами под супервизией. Первая ступень даёт фундамент личностных компетенций и гештальт-мышления." },
 ];
 
 const DASHBOARD_USER = {
@@ -64,8 +70,9 @@ export default function Index() {
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-sm border-b border-border/40">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="#" className="font-display text-2xl font-semibold text-terracotta tracking-wide">
-            🌱 Росток
+          <a href="#" className="flex flex-col leading-tight">
+            <span className="font-display text-xs font-normal text-warm-brown/50 tracking-widest uppercase">Московский гештальт институт</span>
+            <span className="font-display text-xl font-semibold text-terracotta tracking-wide">Первая ступень</span>
           </a>
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map(l => (
@@ -114,14 +121,15 @@ export default function Index() {
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
           <div>
             <div className="inline-flex items-center gap-2 bg-terracotta-pale text-terracotta px-4 py-2 rounded-full text-sm font-medium mb-8 animate-fade-in stagger-1">
-              <span>✦</span> Набор открыт — поток Май 2025
+              <span>✦</span> Набор открыт — старт в 2025 году
             </div>
+            <div className="text-warm-brown/50 text-sm font-semibold tracking-widest uppercase mb-3 animate-fade-in stagger-1">Московский гештальт институт</div>
             <h1 className="font-display text-6xl lg:text-8xl font-light leading-tight text-warm-brown mb-6 animate-fade-in stagger-2">
-              Вырасти<br />
-              <em className="text-terracotta not-italic font-normal">изнутри</em>
+              Первая<br />
+              <em className="text-terracotta not-italic font-normal">ступень</em>
             </h1>
             <p className="text-lg text-warm-brown/65 leading-relaxed max-w-md mb-10 animate-fade-in stagger-3">
-              Четырёхмесячная программа осознанного развития, где живые практики, глубокие знания и поддерживающее сообщество создают настоящие перемены.
+              Подготовка гештальт-терапевтов. Восемь трёхдневных встреч — развитие личностных компетенций и глубокое знакомство с принципами гештальт-подхода.
             </p>
             <div className="flex flex-wrap gap-4 animate-fade-in stagger-4">
               <a href="#about" className="bg-terracotta text-cream px-8 py-4 rounded-full text-base font-medium hover:bg-terracotta/90 transition-all duration-300 hover:scale-105 hover:shadow-lg shadow-terracotta/20">
@@ -133,18 +141,18 @@ export default function Index() {
             </div>
             <div className="flex items-center gap-8 mt-12 animate-fade-in stagger-5">
               <div>
-                <div className="font-display text-3xl text-terracotta font-semibold">4 мес</div>
-                <div className="text-sm text-warm-brown/55 mt-1">длительность</div>
+                <div className="font-display text-3xl text-terracotta font-semibold">180</div>
+                <div className="text-sm text-warm-brown/55 mt-1">академических часов</div>
               </div>
               <div className="w-px h-10 bg-border" />
               <div>
-                <div className="font-display text-3xl text-terracotta font-semibold">6</div>
-                <div className="text-sm text-warm-brown/55 mt-1">модулей</div>
+                <div className="font-display text-3xl text-terracotta font-semibold">8</div>
+                <div className="text-sm text-warm-brown/55 mt-1">трёхдневных сессий</div>
               </div>
               <div className="w-px h-10 bg-border" />
               <div>
-                <div className="font-display text-3xl text-terracotta font-semibold">24</div>
-                <div className="text-sm text-warm-brown/55 mt-1">занятия</div>
+                <div className="font-display text-3xl text-terracotta font-semibold">1,5</div>
+                <div className="text-sm text-warm-brown/55 mt-1">месяца между встречами</div>
               </div>
             </div>
           </div>
@@ -197,7 +205,7 @@ export default function Index() {
               <p className="text-warm-brown/65 leading-relaxed mb-8">
                 Нити берутся из трёх пучков — и именно их переплетение делает работу живой и настоящей.
               </p>
-              <div className="space-y-3 mb-10">
+              <div className="space-y-3 mb-8">
                 {[
                   { color: "bg-terracotta", label: "Отношения", desc: "То, что рождается между участниками прямо здесь и сейчас — в живом контакте, в моменте встречи." },
                   { color: "bg-amber", label: "Теория", desc: "Психологические концепции, которые дают язык и помогают понять то, что происходит внутри и между нами." },
@@ -211,6 +219,25 @@ export default function Index() {
                     </div>
                   </div>
                 ))}
+              </div>
+              <div className="border-t border-border/50 pt-8">
+                <div className="text-xs font-semibold text-warm-brown/40 uppercase tracking-widest mb-4">Фокусы первой ступени</div>
+                <ul className="space-y-2.5">
+                  {[
+                    "Осознавание собственных психических процессов",
+                    "Выстраивание диалогических отношений с другими",
+                    "Осознавание своих переживаний в отношениях",
+                    "Феноменологическое описание переживаний и событий",
+                    "Знакомство с основными понятиями гештальт-терапии",
+                  ].map((focus, i) => (
+                    <li key={i} className="flex items-start gap-3 text-sm text-warm-brown/65">
+                      <div className="w-5 h-5 rounded-full bg-terracotta/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <div className="w-1.5 h-1.5 rounded-full bg-terracotta/60" />
+                      </div>
+                      {focus}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
@@ -338,41 +365,40 @@ export default function Index() {
           <div className="text-center max-w-2xl mx-auto mb-20">
             <div className="text-terracotta text-sm font-semibold tracking-widest uppercase mb-4">Расписание</div>
             <h2 className="font-display text-5xl lg:text-6xl font-light text-warm-brown leading-tight">
-              Четыре месяца <em className="text-terracotta">путешествия</em>
+              Восемь сессий — <em className="text-terracotta">один путь</em>
             </h2>
+            <p className="text-warm-brown/55 mt-4 text-base">Каждая трёхдневная встреча — это новый виток, примерно раз в 1,5 месяца</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {schedule.map((s, i) => (
-              <div key={i} className="relative">
-                <div className="bg-cream rounded-4xl p-8 h-full border border-border/50 hover:border-terracotta/30 transition-colors duration-300">
-                  <div className="inline-flex items-center gap-2 bg-terracotta text-cream px-4 py-1.5 rounded-full text-xs font-semibold mb-4">
+              <div key={i} className="bg-cream rounded-3xl p-6 h-full border border-border/50 hover:border-terracotta/30 hover:shadow-sm transition-all duration-300 group">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="inline-flex items-center bg-terracotta text-cream px-3 py-1 rounded-full text-xs font-semibold">
                     {s.month}
                   </div>
-                  <div className="font-display text-xl font-medium text-warm-brown mb-5">{s.phase}</div>
-                  <ul className="space-y-3">
-                    {s.items.map((item, j) => (
-                      <li key={j} className="flex items-center gap-2.5 text-sm text-warm-brown/65">
-                        <div className="w-1.5 h-1.5 bg-terracotta/50 rounded-full flex-shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                {i < 3 && (
-                  <div className="hidden lg:flex absolute top-1/2 -right-4 z-10 items-center justify-center w-8 h-8 bg-white rounded-full border border-border shadow-sm">
-                    <Icon name="ChevronRight" size={14} className="text-terracotta" />
+                  <div className="w-6 h-6 rounded-full border-2 border-terracotta/20 flex items-center justify-center group-hover:border-terracotta/50 transition-colors">
+                    <span className="text-xs font-bold text-terracotta/40 group-hover:text-terracotta/70">{i + 1}</span>
                   </div>
-                )}
+                </div>
+                <div className="font-display text-lg font-medium text-warm-brown mb-4">{s.phase}</div>
+                <ul className="space-y-2">
+                  {s.items.map((item, j) => (
+                    <li key={j} className="flex items-center gap-2 text-xs text-warm-brown/60">
+                      <div className="w-1 h-1 bg-terracotta/40 rounded-full flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
-          <div className="mt-10 bg-terracotta-pale rounded-4xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="mt-8 bg-terracotta-pale rounded-4xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <div className="font-display text-2xl font-medium text-warm-brown mb-1">Старт ближайшего потока — 12 мая 2025</div>
-              <div className="text-warm-brown/60 text-sm">Осталось 8 мест из 20. Группа закрыта после набора.</div>
+              <div className="font-display text-2xl font-medium text-warm-brown mb-1">180 часов — полный объём Первой ступени</div>
+              <div className="text-warm-brown/60 text-sm">Группа формируется один раз. Присоединяйтесь до старта.</div>
             </div>
             <a href="#contacts" className="bg-terracotta text-cream px-8 py-4 rounded-full font-medium hover:bg-terracotta/90 transition-all duration-300 whitespace-nowrap hover:scale-105">
-              Занять место
+              Записаться
             </a>
           </div>
         </div>

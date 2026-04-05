@@ -524,28 +524,9 @@ export default function Index() {
             Начнём ваш <em className="text-amber">путь</em> вместе
           </h2>
           <p className="text-cream/60 text-lg leading-relaxed mb-12">
-            Оставьте заявку, и мы свяжемся с вами в течение 24 часов, чтобы ответить на все вопросы и помочь определиться.
+            Свяжитесь с нами любым удобным способом — ответим на все вопросы и поможем определиться.
           </p>
-          <form className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-4xl p-10 text-left space-y-5">
-            <div className="grid md:grid-cols-2 gap-5">
-              <div>
-                <label className="text-cream/70 text-sm font-medium block mb-2">Имя</label>
-                <input type="text" placeholder="Ваше имя" className="w-full bg-white/10 border border-white/20 rounded-2xl px-4 py-3.5 text-cream placeholder-cream/30 focus:outline-none focus:border-amber/50 transition-colors" />
-              </div>
-              <div>
-                <label className="text-cream/70 text-sm font-medium block mb-2">Телефон или email</label>
-                <input type="text" placeholder="+7 999 000 00 00" className="w-full bg-white/10 border border-white/20 rounded-2xl px-4 py-3.5 text-cream placeholder-cream/30 focus:outline-none focus:border-amber/50 transition-colors" />
-              </div>
-            </div>
-            <div>
-              <label className="text-cream/70 text-sm font-medium block mb-2">Что вас привлекает в программе?</label>
-              <textarea rows={3} placeholder="Расскажите немного о себе и своих ожиданиях..." className="w-full bg-white/10 border border-white/20 rounded-2xl px-4 py-3.5 text-cream placeholder-cream/30 focus:outline-none focus:border-amber/50 transition-colors resize-none" />
-            </div>
-            <button type="button" className="w-full bg-amber text-warm-brown py-4 rounded-full font-semibold text-base hover:bg-amber-light transition-all duration-300 hover:scale-[1.02] shadow-lg shadow-amber/20">
-              Отправить заявку
-            </button>
-          </form>
-          <div className="mt-10 flex flex-wrap gap-6 justify-center text-cream/50 text-sm">
+          <div className="mt-4 flex flex-wrap gap-6 justify-center text-cream/50 text-sm">
             <span className="flex items-center gap-2"><Icon name="Mail" size={15} /> hello@rostok.ru</span>
             <span className="flex items-center gap-2"><Icon name="Phone" size={15} /> +7 999 123 45 67</span>
             <span className="flex items-center gap-2"><Icon name="MessageCircle" size={15} /> Telegram: @rostok_edu</span>

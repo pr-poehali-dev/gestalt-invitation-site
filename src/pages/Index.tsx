@@ -164,7 +164,7 @@ export default function Index() {
             </div>
             <div className="absolute -top-6 -right-6 bg-terracotta rounded-3xl p-5 shadow-xl animate-float-reverse">
               <div className="text-cream text-center">
-                <div className="font-display text-3xl font-bold">Сообщество по всей России</div>
+                <div className="font-display text-3xl font-bold">Сообщество</div>
                 <div className="text-xs opacity-80 mt-1">по всей России</div>
               </div>
             </div>

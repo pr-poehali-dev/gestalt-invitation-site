@@ -224,32 +224,81 @@ export default function Index() {
           <div className="text-center max-w-2xl mx-auto mb-20">
             <div className="text-terracotta text-sm font-semibold tracking-widest uppercase mb-4">Как это устроено</div>
             <h2 className="font-display text-5xl lg:text-6xl font-light text-warm-brown leading-tight">
-              Просто и понятно — <em className="text-terracotta">шаг за шагом</em>
+              Три нити <em className="text-terracotta">каждого занятия</em>
             </h2>
+            <p className="text-warm-brown/60 mt-6 text-lg leading-relaxed">
+              На каждой встрече группа плетёт полотно из трёх нитей — они входят в разные моменты, переплетаются и создают то, что невозможно получить в одиночку.
+            </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          {/* Three threads visual */}
+          <div className="grid lg:grid-cols-3 gap-6 mb-16">
             {[
-              { step: "01", icon: "BookOpen", title: "Подаёте заявку", desc: "Заполняете короткую анкету и записываетесь на вводную встречу с куратором." },
-              { step: "02", icon: "Video", title: "Входите в поток", desc: "Получаете доступ к личному кабинету со всеми материалами и расписанием." },
-              { step: "03", icon: "Users", title: "Практикуете вместе", desc: "Дважды в неделю — живые встречи онлайн. Каждый день — короткие практики." },
-              { step: "04", icon: "Sparkles", title: "Трансформируетесь", desc: "К финалу программы у вас — рабочие инструменты и поддерживающее сообщество." },
-            ].map((item, i) => (
-              <div key={i} className="relative group">
-                <div className="bg-white rounded-4xl p-8 h-full shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-                  <div className="font-display text-6xl font-light text-terracotta/15 mb-4">{item.step}</div>
-                  <div className="w-12 h-12 bg-terracotta/10 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-terracotta transition-all duration-300">
-                    <Icon name={item.icon as any} size={22} className="text-terracotta group-hover:text-cream transition-colors duration-300" />
-                  </div>
-                  <h3 className="font-display text-xl font-medium text-warm-brown mb-3">{item.title}</h3>
-                  <p className="text-sm text-warm-brown/60 leading-relaxed">{item.desc}</p>
+              {
+                color: "bg-terracotta",
+                colorLight: "bg-terracotta-pale",
+                colorText: "text-terracotta",
+                label: "Отношения",
+                icon: "Users",
+                desc: "Живой контакт между участниками прямо в моменте встречи. Именно здесь рождается главное — ощущение, что ты не один.",
+                examples: ["Обратная связь внутри группы", "Совместные упражнения", "Работа с тем, что происходит сейчас"],
+              },
+              {
+                color: "bg-amber",
+                colorLight: "bg-amber/10",
+                colorText: "text-amber-600",
+                label: "Теория",
+                icon: "BookOpen",
+                desc: "Концепции и идеи, которые дают язык для того, что происходит внутри. Теория — не лекция, а карта для живого опыта.",
+                examples: ["Короткие мини-лекции", "Разбор психологических механизмов", "Модели и метафоры"],
+              },
+              {
+                color: "bg-sage",
+                colorLight: "bg-sage-pale",
+                colorText: "text-sage",
+                label: "Личная история",
+                icon: "Heart",
+                desc: "То, что каждый приносит из своей жизни — вопросы, которые важны именно ему, опыт, боль, ресурсы и открытия.",
+                examples: ["Личные истории участников", "Работа с собственным материалом", "Связь прошлого с настоящим"],
+              },
+            ].map((thread) => (
+              <div key={thread.label} className="bg-white rounded-4xl p-8 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 group">
+                <div className={`w-14 h-3 ${thread.color} rounded-full mb-6 opacity-70 group-hover:w-20 transition-all duration-500`} />
+                <div className={`w-12 h-12 ${thread.colorLight} rounded-2xl flex items-center justify-center mb-5`}>
+                  <Icon name={thread.icon as any} size={22} className={thread.colorText} />
                 </div>
-                {i < 3 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 z-10 text-terracotta/30">
-                    <Icon name="ArrowRight" size={20} />
-                  </div>
-                )}
+                <h3 className="font-display text-2xl font-medium text-warm-brown mb-3">{thread.label}</h3>
+                <p className="text-sm text-warm-brown/60 leading-relaxed mb-6">{thread.desc}</p>
+                <ul className="space-y-2">
+                  {thread.examples.map(ex => (
+                    <li key={ex} className="flex items-center gap-2.5 text-xs text-warm-brown/50">
+                      <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${thread.color} opacity-60`} />
+                      {ex}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
+          </div>
+
+          {/* Weaving metaphor bar */}
+          <div className="bg-white rounded-4xl p-8 flex flex-col md:flex-row items-center gap-6 shadow-sm">
+            <div className="flex-1">
+              <div className="font-display text-xl font-medium text-warm-brown mb-2">Полотно плетётся всеми вместе</div>
+              <p className="text-sm text-warm-brown/60 leading-relaxed">Каждый участник вносит свои нити — и возникает нечто большее, чем сумма частей. Это и есть группа.</p>
+            </div>
+            <div className="flex items-center gap-2 flex-shrink-0">
+              <div className="flex flex-col gap-1.5">
+                {[...Array(5)].map((_, i) => (
+                  <div key={i} className={`h-1.5 rounded-full ${i % 3 === 0 ? "bg-terracotta w-16" : i % 3 === 1 ? "bg-amber w-12" : "bg-sage w-14"} opacity-60`} />
+                ))}
+              </div>
+              <div className="flex flex-col gap-1.5 ml-1">
+                {[...Array(5)].map((_, i) => (
+                  <div key={i} className={`h-1.5 rounded-full ${i % 3 === 2 ? "bg-terracotta w-14" : i % 3 === 0 ? "bg-amber w-16" : "bg-sage w-10"} opacity-40`} />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

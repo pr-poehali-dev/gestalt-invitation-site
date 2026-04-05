@@ -377,7 +377,7 @@ export default function Index() {
           <div className="text-center max-w-2xl mx-auto mb-20">
             <div className="text-amber text-sm font-semibold tracking-widest uppercase mb-4">Программа</div>
             <h2 className="font-display text-5xl lg:text-6xl font-light text-cream leading-tight">
-              Восемь <em className="text-amber">сессий</em> — полный путь
+              Восемь сессий — <em className="text-amber">первая ступень</em>
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

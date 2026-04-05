@@ -120,9 +120,7 @@ export default function Index() {
 
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
           <div>
-            <div className="inline-flex items-center gap-2 bg-terracotta-pale text-terracotta px-4 py-2 rounded-full text-sm font-medium mb-8 animate-fade-in stagger-1">
-              <span>✦</span> Набор открыт — старт в 2025 году
-            </div>
+            <div className="inline-flex items-center gap-2 bg-terracotta-pale text-terracotta px-4 py-2 rounded-full text-sm font-medium mb-8 animate-fade-in stagger-1">Набор открыт - старт 2 октября 2026 г. </div>
             <div className="text-warm-brown/50 text-sm font-semibold tracking-widest uppercase mb-3 animate-fade-in stagger-1">Московский гештальт институт</div>
             <h1 className="font-display text-6xl lg:text-8xl font-light leading-tight text-warm-brown mb-6 animate-fade-in stagger-2">
               Первая<br />

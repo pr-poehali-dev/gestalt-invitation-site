@@ -146,9 +146,8 @@ export default function Index() {
               Первая<br />
               <em className="text-terracotta not-italic font-normal">ступень</em>
             </h1>
-            <p className="text-lg text-warm-brown/65 leading-relaxed max-w-md mb-10 animate-fade-in stagger-3">
-              Подготовка гештальт-терапевтов. Восемь трёхдневных встреч — развитие личностных компетенций и глубокое знакомство с принципами гештальт-подхода.
-            </p>
+            <p className="text-lg text-warm-brown/65 leading-relaxed max-w-md mb-10 animate-fade-in stagger-3">Подготовка гештальт-терапевтов. 
+Восемь трёхдневных встреч для развития личностных компетенций и знакомства с принципами гештальт-подхода.</p>
             <div className="flex flex-wrap gap-4 animate-fade-in stagger-4">
               <a href="#about" className="bg-terracotta text-cream px-8 py-4 rounded-full text-base font-medium hover:bg-terracotta/90 transition-all duration-300 hover:scale-105 hover:shadow-lg shadow-terracotta/20">
                 Узнать подробнее

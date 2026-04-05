@@ -213,7 +213,7 @@ export default function Index() {
             </div>
             <div>
               <div className="text-sage text-sm font-semibold tracking-widest uppercase mb-4">О программе</div>
-              <h2 className="font-display text-5xl lg:text-6xl font-light text-warm-brown leading-tight mb-6">
+              <h2 className="font-display text-5xl lg:text-6xl font-light text-warm-brown leading-tight mb-6 text-left">
                 Группа плетёт <em className="text-terracotta">общее полотно</em>
               </h2>
               <p className="text-warm-brown/65 leading-relaxed mb-6">

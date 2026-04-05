@@ -476,20 +476,7 @@ export default function Index() {
               ))}
             </div>
 
-            {/* Scroll indicator */}
-            <div className="mx-6 lg:mx-16 mt-6">
-              <div className="w-full h-0.5 bg-border rounded-full overflow-hidden">
-                <div
-                  id="teachers-progress"
-                  className="h-full bg-terracotta rounded-full transition-all duration-100"
-                  style={{ width: "0%" }}
-                />
-              </div>
-              <div className="flex justify-between mt-3 text-xs text-warm-brown/40">
-                <span>← прокрутите</span>
-                <span>{teachers.length} ведущих</span>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>

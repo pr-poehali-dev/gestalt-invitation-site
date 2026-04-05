@@ -413,25 +413,54 @@ export default function Index() {
       {/* TEACHERS */}
       <section id="teachers" className="py-28 bg-cream relative overflow-hidden">
         <div className="absolute top-0 left-0 w-96 h-96 bg-sage/8 blob-3" />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center max-w-2xl mx-auto mb-20">
-            <div className="text-sage text-sm font-semibold tracking-widest uppercase mb-4">Преподаватели</div>
+        <div className="relative z-10">
+          <div className="text-center max-w-2xl mx-auto mb-16 px-6">
+            <div className="text-sage text-sm font-semibold tracking-widest uppercase mb-4">Ведущие группы</div>
             <h2 className="font-display text-5xl lg:text-6xl font-light text-warm-brown leading-tight">
               Люди, которые <em className="text-terracotta">ведут путь</em>
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {teachers.map((t, i) => (
-              <div key={i} className="group bg-white rounded-4xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 text-center">
-                <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-terracotta-pale to-sage-pale flex items-center justify-center text-3xl mb-5 group-hover:scale-110 transition-transform duration-300">
-                  {t.emoji}
+
+          {/* Horizontal scroll container */}
+          <div className="relative">
+            <div
+              id="teachers-scroll"
+              className="flex gap-6 overflow-x-auto pb-6 px-6 lg:px-16 scroll-smooth"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+              onScroll={(e) => {
+                const el = e.currentTarget;
+                const progress = el.scrollLeft / (el.scrollWidth - el.clientWidth);
+                const bar = document.getElementById("teachers-progress");
+                if (bar) bar.style.width = `${progress * 100}%`;
+              }}
+            >
+              {teachers.map((t, i) => (
+                <div key={i} className="group bg-white rounded-4xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 text-center flex-shrink-0 w-72">
+                  <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-terracotta-pale to-sage-pale flex items-center justify-center text-4xl mb-5 group-hover:scale-110 transition-transform duration-300">
+                    {t.emoji}
+                  </div>
+                  <div className="font-display text-xl font-medium text-warm-brown mb-1">{t.name}</div>
+                  <div className="text-terracotta text-xs font-semibold uppercase tracking-wide mb-1">{t.role}</div>
+                  <div className="text-warm-brown/45 text-xs mb-4">{t.exp}</div>
+                  <p className="text-sm text-warm-brown/60 leading-relaxed">{t.desc}</p>
                 </div>
-                <div className="font-display text-xl font-medium text-warm-brown mb-1">{t.name}</div>
-                <div className="text-terracotta text-xs font-semibold uppercase tracking-wide mb-1">{t.role}</div>
-                <div className="text-warm-brown/45 text-xs mb-4">{t.exp}</div>
-                <p className="text-sm text-warm-brown/60 leading-relaxed">{t.desc}</p>
+              ))}
+            </div>
+
+            {/* Scroll indicator */}
+            <div className="mx-6 lg:mx-16 mt-6">
+              <div className="w-full h-0.5 bg-border rounded-full overflow-hidden">
+                <div
+                  id="teachers-progress"
+                  className="h-full bg-terracotta rounded-full transition-all duration-100"
+                  style={{ width: "0%" }}
+                />
               </div>
-            ))}
+              <div className="flex justify-between mt-3 text-xs text-warm-brown/40">
+                <span>← прокрутите</span>
+                <span>{teachers.length} ведущих</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>

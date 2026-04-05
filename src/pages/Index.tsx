@@ -238,6 +238,26 @@ export default function Index() {
                   </div>
                 ))}
               </div>
+              <div className="flex gap-4 mb-8">
+                <div className="flex-1 bg-cream rounded-2xl p-4 flex items-center gap-3">
+                  <div className="w-9 h-9 bg-terracotta/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Icon name="MapPin" size={18} className="text-terracotta" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold text-warm-brown">Очный формат</div>
+                    <div className="text-xs text-warm-brown/55 mt-0.5">Живые встречи, три дня подряд</div>
+                  </div>
+                </div>
+                <div className="flex-1 bg-cream rounded-2xl p-4 flex items-center gap-3">
+                  <div className="w-9 h-9 bg-sage/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Icon name="Users" size={18} className="text-sage" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold text-warm-brown">12–16 человек</div>
+                    <div className="text-xs text-warm-brown/55 mt-0.5">Небольшая закрытая группа</div>
+                  </div>
+                </div>
+              </div>
               <div className="border-t border-border/50 pt-8">
                 <div className="text-xs font-semibold text-warm-brown/40 uppercase tracking-widest mb-4">Фокусы первой ступени</div>
                 <ul className="space-y-2.5">

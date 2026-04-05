@@ -25,10 +25,15 @@ const modules = [
 ];
 
 const teachers = [
-  { name: "Анна Соколова", role: "Куратор программы", exp: "12 лет практики", desc: "Психолог, коуч по осознанности, автор методики интегративного роста.", emoji: "🌸" },
-  { name: "Михаил Лесной", role: "Модуль «Тело»", exp: "8 лет практики", desc: "Соматический терапевт, преподаватель йоги, исследователь телесных практик.", emoji: "🌿" },
-  { name: "Ольга Ветрова", role: "Модуль «Эмоции»", exp: "10 лет практики", desc: "Гештальт-терапевт, специалист по ненасильственному общению.", emoji: "🍃" },
-  { name: "Дмитрий Корень", role: "Модуль «Смыслы»", exp: "15 лет практики", desc: "Философ, экзистенциальный коуч, автор книги «Точка опоры».", emoji: "🌻" },
+  {
+    name: "Геннадий Авилов",
+    city: "Кемерово",
+    role: "Ассоциированный тренер МГИ",
+    exp: "Более 18 лет практики",
+    photo: "https://cdn.poehali.dev/projects/a6fb0e7f-e44b-4597-8b80-f26e820765c9/bucket/ce4670ef-2599-4ff6-be0b-9a1bb34f936b.JPG",
+    tags: ["Гештальт-терапевт", "Супервизор", "К.пс.н., доцент КемГУ"],
+    desc: "Специалист по экзистенциальным вопросам, кризисной психологии и работе с утратами.",
+  },
 ];
 
 const schedule = [
@@ -435,14 +440,29 @@ export default function Index() {
               }}
             >
               {teachers.map((t, i) => (
-                <div key={i} className="group bg-white rounded-4xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 text-center flex-shrink-0 w-72">
-                  <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-terracotta-pale to-sage-pale flex items-center justify-center text-4xl mb-5 group-hover:scale-110 transition-transform duration-300">
-                    {t.emoji}
+                <div key={i} className="group bg-white rounded-4xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex-shrink-0 w-80">
+                  <div className="relative h-72 overflow-hidden">
+                    <img
+                      src={t.photo}
+                      alt={t.name}
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
+                    <div className="absolute top-4 right-4 bg-cream/90 backdrop-blur-sm text-warm-brown/60 text-xs px-3 py-1.5 rounded-full font-medium">
+                      {t.city}
+                    </div>
                   </div>
-                  <div className="font-display text-xl font-medium text-warm-brown mb-1">{t.name}</div>
-                  <div className="text-terracotta text-xs font-semibold uppercase tracking-wide mb-1">{t.role}</div>
-                  <div className="text-warm-brown/45 text-xs mb-4">{t.exp}</div>
-                  <p className="text-sm text-warm-brown/60 leading-relaxed">{t.desc}</p>
+                  <div className="p-6 pt-4">
+                    <div className="font-display text-2xl font-medium text-warm-brown mb-1">{t.name}</div>
+                    <div className="text-terracotta text-xs font-semibold uppercase tracking-wide mb-3">{t.role}</div>
+                    <div className="flex flex-wrap gap-1.5 mb-4">
+                      {t.tags.map(tag => (
+                        <span key={tag} className="text-xs bg-cream text-warm-brown/65 px-2.5 py-1 rounded-full border border-border/60">{tag}</span>
+                      ))}
+                    </div>
+                    <div className="text-xs text-sage font-medium mb-3">{t.exp}</div>
+                    <p className="text-sm text-warm-brown/60 leading-relaxed">{t.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>

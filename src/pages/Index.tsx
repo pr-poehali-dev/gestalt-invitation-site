@@ -9,7 +9,7 @@ const navLinks = [
   { label: "Как это устроено", href: "#how" },
   { label: "Модули", href: "#modules" },
   { label: "Расписание", href: "#schedule" },
-  { label: "Преподаватели", href: "#teachers" },
+  { label: "Ведущие группы", href: "#teachers" },
   { label: "Контакты", href: "#contacts" },
 ];
 

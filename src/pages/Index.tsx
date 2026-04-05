@@ -539,8 +539,8 @@ export default function Index() {
       {/* FOOTER */}
       <footer className="bg-warm-brown py-10 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="font-display text-xl text-cream/70">🌱 Росток</div>
-          <div className="text-cream/30 text-sm">© 2025 Образовательная программа «Росток». Все права защищены.</div>
+          <div className="font-display text-xl text-cream/70">Московский гештальт институт</div>
+          <div className="text-cream/30 text-sm">© 2025 Программа подготовки гештальт-терапевтов. Все права защищены.</div>
           <div className="flex gap-4 text-cream/40 text-sm">
             <a href="#" className="hover:text-cream transition-colors">Политика конфиденциальности</a>
             <a href="#" className="hover:text-cream transition-colors">Оферта</a>

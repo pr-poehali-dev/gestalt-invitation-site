@@ -415,7 +415,7 @@ export default function Index() {
           <div className="mt-8 bg-terracotta-pale rounded-4xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
               <div className="font-display text-2xl font-medium text-warm-brown mb-1">180 часов — полный объём Первой ступени</div>
-              <div className="text-warm-brown/60 text-sm">Группа формируется один раз. Присоединяйтесь до старта.</div>
+              <div className="text-warm-brown/60 text-sm">Выбери действительно важное</div>
             </div>
             <a href="#contacts" className="bg-terracotta text-cream px-8 py-4 rounded-full font-medium hover:bg-terracotta/90 transition-all duration-300 whitespace-nowrap hover:scale-105">
               Записаться

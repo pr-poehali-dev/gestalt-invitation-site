@@ -526,12 +526,43 @@ export default function Index() {
             Начнём ваш <em className="text-amber">путь</em> вместе
           </h2>
           <p className="text-cream/60 text-lg leading-relaxed mb-12">
-            Свяжитесь с нами любым удобным способом — ответим на все вопросы и поможем определиться.
+            Свяжитесь с ведущими любым удобным способом — ответим на все вопросы и поможем определиться.
           </p>
-          <div className="mt-4 flex flex-wrap gap-6 justify-center text-cream/50 text-sm">
-            <span className="flex items-center gap-2"><Icon name="Mail" size={15} /> hello@rostok.ru</span>
-            <span className="flex items-center gap-2"><Icon name="Phone" size={15} /> +7 999 123 45 67</span>
-            <span className="flex items-center gap-2"><Icon name="MessageCircle" size={15} /> Telegram: @rostok_edu</span>
+          <div className="grid md:grid-cols-2 gap-6 text-left">
+            {[
+              {
+                name: "Геннадий Авилов",
+                contacts: [
+                  { icon: "Phone", label: "8-903-944-71-16", href: "tel:+79039447116" },
+                  { icon: "Mail", label: "avilg@mail.ru", href: "mailto:avilg@mail.ru" },
+                  { icon: "MessageCircle", label: "@avilov_g", href: "https://t.me/avilov_g" },
+                  { icon: "Users", label: "vk.com/avilov_gestalt", href: "https://vk.com/avilov_gestalt" },
+                ],
+              },
+              {
+                name: "Юлия Воропаева",
+                contacts: [
+                  { icon: "Phone", label: "+7 913 746 5908", href: "tel:+79137465908" },
+                  { icon: "MessageCircle", label: "@yv_psiholog", href: "https://t.me/yv_psiholog" },
+                  { icon: "Users", label: "vk.com/psychosomo", href: "https://vk.com/psychosomo" },
+                ],
+              },
+            ].map(person => (
+              <div key={person.name} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6">
+                <div className="font-body font-semibold text-cream mb-4">{person.name}</div>
+                <ul className="space-y-3">
+                  {person.contacts.map(c => (
+                    <li key={c.label}>
+                      <a href={c.href} target="_blank" rel="noopener noreferrer"
+                        className="flex items-center gap-3 text-cream/60 hover:text-amber transition-colors text-sm">
+                        <Icon name={c.icon as any} size={15} className="flex-shrink-0" />
+                        {c.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </section>

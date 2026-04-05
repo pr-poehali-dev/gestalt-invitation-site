@@ -462,7 +462,7 @@ export default function Index() {
                     </div>
                   </div>
                   <div className="p-6 pt-4">
-                    <div className="font-display text-2xl font-medium text-warm-brown mb-1">{t.name}</div>
+                    <div className="font-body text-xl font-semibold text-warm-brown mb-1">{t.name}</div>
                     <div className="text-terracotta text-xs font-semibold uppercase tracking-wide mb-3">{t.role}</div>
                     <div className="flex flex-wrap gap-1.5 mb-4">
                       {t.tags.map(tag => (

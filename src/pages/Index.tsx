@@ -64,20 +64,9 @@ const faqs = [
   { q: "Что происходит после завершения Первой ступени?", a: "Выпускники могут продолжить обучение на Второй ступени МГИ — работа с клиентами под супервизией. Первая ступень даёт фундамент личностных компетенций и гештальт-мышления." },
 ];
 
-const DASHBOARD_USER = {
-  name: "Мария К.",
-  progress: 35,
-  completedModules: 2,
-  totalModules: 6,
-  nextLesson: "Телесные практики — модуль 2",
-  nextDate: "12 мая, 19:00",
-};
-
 export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
-  const [showDashboard, setShowDashboard] = useState(false);
-  const [dashTab, setDashTab] = useState<"progress" | "materials" | "schedule">("progress");
 
   return (
     <div className="min-h-screen bg-cream font-body overflow-x-hidden">
@@ -96,13 +85,6 @@ export default function Index() {
             ))}
           </div>
           <div className="flex items-center gap-3">
-            <button
-              onClick={() => setShowDashboard(true)}
-              className="hidden lg:flex items-center gap-2 bg-terracotta text-cream px-5 py-2.5 rounded-full text-sm font-medium hover:bg-terracotta/90 transition-all duration-300 hover:scale-105"
-            >
-              <Icon name="User" size={16} />
-              Личный кабинет
-            </button>
             <button onClick={() => setMenuOpen(!menuOpen)} className="lg:hidden p-2 text-warm-brown">
               <Icon name={menuOpen ? "X" : "Menu"} size={22} />
             </button>
@@ -115,13 +97,6 @@ export default function Index() {
                 {l.label}
               </a>
             ))}
-            <button
-              onClick={() => { setShowDashboard(true); setMenuOpen(false); }}
-              className="flex items-center gap-2 bg-terracotta text-cream px-5 py-3 rounded-full text-sm font-medium mt-2"
-            >
-              <Icon name="User" size={16} />
-              Личный кабинет
-            </button>
           </div>
         )}
       </nav>
@@ -579,142 +554,7 @@ export default function Index() {
         </div>
       </footer>
 
-      {/* ЛИЧНЫЙ КАБИНЕТ */}
-      {showDashboard && (
-        <div className="fixed inset-0 z-[100] flex items-start justify-end">
-          <div className="absolute inset-0 bg-warm-brown/40 backdrop-blur-sm" onClick={() => setShowDashboard(false)} />
-          <div className="relative w-full max-w-lg h-full bg-cream shadow-2xl overflow-y-auto animate-slide-up">
-            <div className="sticky top-0 bg-cream border-b border-border/50 px-6 py-5 flex items-center justify-between z-10">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-terracotta rounded-full flex items-center justify-center text-cream font-display text-lg">М</div>
-                <div>
-                  <div className="font-semibold text-warm-brown text-sm">{DASHBOARD_USER.name}</div>
-                  <div className="text-xs text-warm-brown/50">Поток Май 2025</div>
-                </div>
-              </div>
-              <button onClick={() => setShowDashboard(false)} className="p-2 text-warm-brown/50 hover:text-warm-brown transition-colors">
-                <Icon name="X" size={20} />
-              </button>
-            </div>
 
-            <div className="px-6 py-6 border-b border-border/50">
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-sm font-medium text-warm-brown">Прогресс программы</span>
-                <span className="text-terracotta font-semibold text-sm">{DASHBOARD_USER.progress}%</span>
-              </div>
-              <div className="w-full bg-muted rounded-full h-2.5">
-                <div className="bg-terracotta h-2.5 rounded-full transition-all duration-700" style={{ width: `${DASHBOARD_USER.progress}%` }} />
-              </div>
-              <div className="flex items-center justify-between mt-2 text-xs text-warm-brown/50">
-                <span>{DASHBOARD_USER.completedModules} из {DASHBOARD_USER.totalModules} модулей завершено</span>
-                <span>12 занятий пройдено</span>
-              </div>
-            </div>
-
-            <div className="px-6 py-5 bg-terracotta-pale border-b border-border/50">
-              <div className="text-xs text-terracotta font-semibold uppercase tracking-wide mb-2">Следующее занятие</div>
-              <div className="font-display text-lg font-medium text-warm-brown">{DASHBOARD_USER.nextLesson}</div>
-              <div className="flex items-center gap-2 mt-2 text-sm text-warm-brown/60">
-                <Icon name="Calendar" size={14} />
-                {DASHBOARD_USER.nextDate}
-              </div>
-              <button className="mt-3 bg-terracotta text-cream px-5 py-2.5 rounded-full text-sm font-medium hover:bg-terracotta/90 transition-colors">
-                Перейти к занятию
-              </button>
-            </div>
-
-            <div className="flex border-b border-border/50">
-              {([
-                { id: "progress", label: "Прогресс" },
-                { id: "materials", label: "Материалы" },
-                { id: "schedule", label: "Расписание" },
-              ] as const).map(tab => (
-                <button
-                  key={tab.id}
-                  onClick={() => setDashTab(tab.id)}
-                  className={`flex-1 py-4 text-sm font-medium transition-colors ${dashTab === tab.id ? "text-terracotta border-b-2 border-terracotta" : "text-warm-brown/50 hover:text-warm-brown"}`}
-                >
-                  {tab.label}
-                </button>
-              ))}
-            </div>
-
-            <div className="px-6 py-6">
-              {dashTab === "progress" && (
-                <div className="space-y-4">
-                  <div className="text-sm font-semibold text-warm-brown mb-4">Модули программы</div>
-                  {modules.map((mod, i) => (
-                    <div key={i} className={`flex items-center gap-4 p-4 rounded-2xl transition-colors ${i < DASHBOARD_USER.completedModules ? "bg-sage-pale" : i === DASHBOARD_USER.completedModules ? "bg-terracotta-pale border border-terracotta/20" : "bg-muted/50"}`}>
-                      <div className={`w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 ${i < DASHBOARD_USER.completedModules ? "bg-sage text-cream" : i === DASHBOARD_USER.completedModules ? "bg-terracotta text-cream" : "bg-muted text-warm-brown/30"}`}>
-                        {i < DASHBOARD_USER.completedModules ? <Icon name="Check" size={16} /> : <span className="text-xs font-bold">{i + 1}</span>}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="text-sm font-medium text-warm-brown truncate">{mod.title}</div>
-                        <div className="text-xs text-warm-brown/50 mt-0.5">
-                          {i < DASHBOARD_USER.completedModules ? "Завершён" : i === DASHBOARD_USER.completedModules ? "В процессе" : "Ещё впереди"}
-                        </div>
-                      </div>
-                      {i === DASHBOARD_USER.completedModules && (
-                        <span className="text-xs bg-terracotta text-cream px-2.5 py-1 rounded-full">Текущий</span>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              )}
-              {dashTab === "materials" && (
-                <div className="space-y-3">
-                  <div className="text-sm font-semibold text-warm-brown mb-4">Учебные материалы</div>
-                  {[
-                    { title: "Введение в осознанность", type: "PDF", size: "2.3 МБ", icon: "FileText" },
-                    { title: "Практика: утренняя медитация", type: "Аудио", size: "18 мин", icon: "Headphones" },
-                    { title: "Запись занятия — Модуль 1", type: "Видео", size: "1:24:00", icon: "Play" },
-                    { title: "Рабочая тетрадь: Тело", type: "PDF", size: "4.1 МБ", icon: "FileText" },
-                    { title: "Практика: сканирование тела", type: "Аудио", size: "22 мин", icon: "Headphones" },
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-4 p-4 bg-white rounded-2xl border border-border/50 hover:border-terracotta/30 transition-colors cursor-pointer group">
-                      <div className="w-10 h-10 bg-terracotta-pale rounded-xl flex items-center justify-center group-hover:bg-terracotta transition-colors duration-300">
-                        <Icon name={item.icon as any} size={18} className="text-terracotta group-hover:text-cream transition-colors duration-300" />
-                      </div>
-                      <div className="flex-1">
-                        <div className="text-sm font-medium text-warm-brown">{item.title}</div>
-                        <div className="text-xs text-warm-brown/45 mt-0.5">{item.type} · {item.size}</div>
-                      </div>
-                      <Icon name="Download" size={16} className="text-warm-brown/30 group-hover:text-terracotta transition-colors" />
-                    </div>
-                  ))}
-                </div>
-              )}
-              {dashTab === "schedule" && (
-                <div className="space-y-4">
-                  <div className="text-sm font-semibold text-warm-brown mb-4">Предстоящие занятия</div>
-                  {[
-                    { date: "12 мая, вт", time: "19:00 – 21:00", title: "Телесные практики — Модуль 2", type: "Живая встреча" },
-                    { date: "15 мая, пт", time: "19:00 – 20:30", title: "Групповая сессия", type: "Групповая работа" },
-                    { date: "19 мая, вт", time: "19:00 – 21:00", title: "Соматика и движение", type: "Живая встреча" },
-                    { date: "22 мая, пт", time: "19:00 – 20:30", title: "Индивидуальный разбор", type: "Супервизия" },
-                  ].map((item, i) => (
-                    <div key={i} className="p-4 bg-white rounded-2xl border border-border/50">
-                      <div className="flex items-start justify-between">
-                        <div>
-                          <div className="text-xs text-terracotta font-semibold uppercase tracking-wide mb-1">{item.type}</div>
-                          <div className="text-sm font-medium text-warm-brown">{item.title}</div>
-                        </div>
-                        <button className="text-xs bg-terracotta-pale text-terracotta px-3 py-1.5 rounded-full hover:bg-terracotta hover:text-cream transition-colors font-medium whitespace-nowrap ml-2">
-                          В календарь
-                        </button>
-                      </div>
-                      <div className="flex items-center gap-3 mt-3 text-xs text-warm-brown/50">
-                        <span className="flex items-center gap-1"><Icon name="Calendar" size={12} /> {item.date}</span>
-                        <span className="flex items-center gap-1"><Icon name="Clock" size={12} /> {item.time}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

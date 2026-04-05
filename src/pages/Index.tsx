@@ -189,28 +189,25 @@ export default function Index() {
             <div>
               <div className="text-sage text-sm font-semibold tracking-widest uppercase mb-4">О программе</div>
               <h2 className="font-display text-5xl lg:text-6xl font-light text-warm-brown leading-tight mb-6">
-                Живые знания, <em className="text-terracotta">настоящий рост</em>
+                Группа плетёт <em className="text-terracotta">общее полотно</em>
               </h2>
               <p className="text-warm-brown/65 leading-relaxed mb-6">
-                «Росток» — это не курс с видеолекциями. Это живая программа, где каждую неделю вы встречаетесь с преподавателями и однопоточниками, практикуете вместе и поддерживаете друг друга.
+                То, что происходит в группе первой ступени — похоже на создание полотна. Каждый участник вносит свои нити, и постепенно рождается нечто, что невозможно создать в одиночку.
               </p>
-              <p className="text-warm-brown/65 leading-relaxed mb-10">
-                Мы верим, что подлинные изменения рождаются из практики, а не из теории. Поэтому 70% программы — это упражнения, медитации, телесные практики и живой диалог.
+              <p className="text-warm-brown/65 leading-relaxed mb-8">
+                Нити берутся из трёх пучков — и именно их переплетение делает работу живой и настоящей.
               </p>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-3 mb-10">
                 {[
-                  { icon: "Leaf", label: "Органический подход", desc: "В ритме природы и тела" },
-                  { icon: "Users", label: "Живое сообщество", desc: "До 20 человек в потоке" },
-                  { icon: "Star", label: "Опытные наставники", desc: "10+ лет каждый" },
-                  { icon: "Shield", label: "Безопасная среда", desc: "Без оценок и осуждения" },
+                  { color: "bg-terracotta", label: "Отношения", desc: "То, что рождается между участниками прямо здесь и сейчас — в живом контакте, в моменте встречи." },
+                  { color: "bg-amber", label: "Теория", desc: "Психологические концепции, которые дают язык и помогают понять то, что происходит внутри и между нами." },
+                  { color: "bg-sage", label: "Личная история", desc: "То, что каждый приносит из своей жизни — опыт, боль, ресурсы, вопросы, которые важны именно ему." },
                 ].map(item => (
-                  <div key={item.label} className="flex gap-3 items-start p-4 rounded-2xl bg-cream hover:bg-terracotta-pale transition-colors duration-300">
-                    <div className="w-9 h-9 bg-terracotta/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Icon name={item.icon as any} size={18} className="text-terracotta" />
-                    </div>
+                  <div key={item.label} className="flex gap-4 items-start p-5 rounded-2xl bg-cream hover:bg-terracotta-pale transition-colors duration-300">
+                    <div className={`w-2 self-stretch rounded-full flex-shrink-0 ${item.color} opacity-70`} />
                     <div>
-                      <div className="text-sm font-semibold text-warm-brown">{item.label}</div>
-                      <div className="text-xs text-warm-brown/55 mt-0.5">{item.desc}</div>
+                      <div className="text-sm font-semibold text-warm-brown mb-1">{item.label}</div>
+                      <div className="text-sm text-warm-brown/60 leading-relaxed">{item.desc}</div>
                     </div>
                   </div>
                 ))}

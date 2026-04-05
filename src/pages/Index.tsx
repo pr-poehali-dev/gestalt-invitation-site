@@ -330,8 +330,8 @@ export default function Index() {
 
       {/* MODULES */}
       <section id="modules" className="py-28 relative overflow-hidden" style={{ background: "hsl(25, 30%, 18%)" }}>
-        <div className="absolute inset-0 bg-cover bg-center opacity-10" style={{ backgroundImage: "url('https://cdn.poehali.dev/projects/a6fb0e7f-e44b-4597-8b80-f26e820765c9/files/19a3e1ab-695a-4dd4-8e33-9fcf84446849.jpg')" }} />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, hsl(25,30%,18%) 0%, hsl(25,30%,18%,0.7) 40%, transparent 70%)" }} />
+        <div className="absolute inset-0 bg-cover bg-center opacity-25" style={{ backgroundImage: "url('https://cdn.poehali.dev/projects/a6fb0e7f-e44b-4597-8b80-f26e820765c9/files/c26ff27c-d861-4c4b-a0bf-a34096231016.jpg')" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, hsl(25,30%,18%) 0%, transparent 15%, transparent 85%, hsl(25,30%,18%) 100%)" }} />
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-terracotta/10 blob-1" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-sage/10 blob-3" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">

@@ -164,7 +164,7 @@ export default function Index() {
                 <div className="w-10 h-10 bg-sage-pale rounded-full flex items-center justify-center text-xl">🌿</div>
                 <div>
                   <div className="text-xs text-warm-brown/50 font-medium">Следующий старт</div>
-                  <div className="text-sm font-semibold text-warm-brown">12 мая 2025</div>
+                  <div className="text-sm font-semibold text-warm-brown">2 октября 2026</div>
                 </div>
               </div>
             </div>

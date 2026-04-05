@@ -447,56 +447,39 @@ export default function Index() {
       {/* TEACHERS */}
       <section id="teachers" className="py-28 bg-cream relative overflow-hidden">
         <div className="absolute top-0 left-0 w-96 h-96 bg-sage/8 blob-3" />
-        <div className="relative z-10">
-          <div className="text-center max-w-2xl mx-auto mb-16 px-6">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center max-w-2xl mx-auto mb-16">
             <div className="text-sage text-sm font-semibold tracking-widest uppercase mb-4">Ведущие группы</div>
             <h2 className="font-display text-5xl lg:text-6xl font-light text-warm-brown leading-tight">
               Люди, которые <em className="text-terracotta">ведут путь</em>
             </h2>
           </div>
-
-          {/* Horizontal scroll container */}
-          <div className="relative">
-            <div
-              id="teachers-scroll"
-              className="flex gap-6 overflow-x-auto pb-6 px-6 lg:px-16 scroll-smooth"
-              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-              onScroll={(e) => {
-                const el = e.currentTarget;
-                const progress = el.scrollLeft / (el.scrollWidth - el.clientWidth);
-                const bar = document.getElementById("teachers-progress");
-                if (bar) bar.style.width = `${progress * 100}%`;
-              }}
-            >
-              {teachers.map((t, i) => (
-                <div key={i} className="group bg-white rounded-4xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex-shrink-0 w-80">
-                  <div className="relative h-72 overflow-hidden">
-                    <img
-                      src={t.photo}
-                      alt={t.name}
-                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
-                    <div className="absolute top-4 right-4 bg-cream/90 backdrop-blur-sm text-warm-brown/60 text-xs px-3 py-1.5 rounded-full font-medium">
-                      {t.city}
-                    </div>
-                  </div>
-                  <div className="p-6 pt-4">
-                    <div className="font-body text-xl font-semibold text-warm-brown mb-1">{t.name}</div>
-                    <div className="text-terracotta text-xs font-semibold uppercase tracking-wide mb-3">{t.role}</div>
-                    <div className="flex flex-wrap gap-1.5 mb-4">
-                      {t.tags.map(tag => (
-                        <span key={tag} className="text-xs bg-cream text-warm-brown/65 px-2.5 py-1 rounded-full border border-border/60">{tag}</span>
-                      ))}
-                    </div>
-                    <div className="text-xs text-sage font-medium mb-3">{t.exp}</div>
-                    <p className="text-sm text-warm-brown/60 leading-relaxed">{t.desc}</p>
+          <div className="grid md:grid-cols-2 gap-8">
+            {teachers.map((t, i) => (
+              <div key={i} className="group bg-white rounded-4xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row">
+                <div className="relative sm:w-56 flex-shrink-0 h-64 sm:h-auto overflow-hidden">
+                  <img
+                    src={t.photo}
+                    alt={t.name}
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-4 left-4 bg-cream/90 backdrop-blur-sm text-warm-brown/60 text-xs px-3 py-1.5 rounded-full font-medium">
+                    {t.city}
                   </div>
                 </div>
-              ))}
-            </div>
-
-
+                <div className="p-6 flex flex-col justify-center">
+                  <div className="font-body text-xl font-semibold text-warm-brown mb-1">{t.name}</div>
+                  <div className="text-terracotta text-xs font-semibold uppercase tracking-wide mb-4">{t.role}</div>
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {t.tags.map(tag => (
+                      <span key={tag} className="text-xs bg-cream text-warm-brown/65 px-2.5 py-1 rounded-full border border-border/60">{tag}</span>
+                    ))}
+                  </div>
+                  <div className="text-xs text-sage font-medium mb-3">{t.exp}</div>
+                  <p className="text-sm text-warm-brown/60 leading-relaxed">{t.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
